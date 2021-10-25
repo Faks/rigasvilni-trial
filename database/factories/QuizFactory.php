@@ -25,7 +25,7 @@ class QuizFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->words(3, true)
+            'title' => $this->faker->word()
         ];
     }
 }

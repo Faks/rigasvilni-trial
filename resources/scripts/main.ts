@@ -6,10 +6,9 @@ import {Ziggy} from "@/scripts/routes/web";
 // @ts-ignore
 import {ZiggyVue} from "ziggy-js/dist/vue";
 import VueMeta from "vue-meta";
-import "@/scripts/components/components";
-import "@/scripts/layouts/layouts";
 import "lodash";
 import "bootstrap";
+import "bootstrap/scss/bootstrap.scss";
 
 Vue.use(ZiggyVue, Ziggy);
 Vue.use(VueMeta);
@@ -23,9 +22,9 @@ Component.registerHooks([
 
 const inertiaApp: any = createInertiaApp(<CreateInertiaAppProps>{
     resolve: (name: string) => {
-        const pages: any = import.meta.glob("../views/**/*.vue");
+        const pages: any = import.meta.glob("../views/pages/**/*.vue");
 
-        const importPage: any = pages[`../views/${name}.vue`];
+        const importPage: any = pages[`../views/pages/${name}.vue`];
 
         if (!importPage) {
             throw new Error(

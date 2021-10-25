@@ -18,6 +18,7 @@ class CreateUserAnswersTable extends Migration
         Schema::create('user_answers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('answer_id')->nullable();
             $table->foreign('answer_id')->references('id')->on('answers');
             $table->timestamp('created_at')->nullable();

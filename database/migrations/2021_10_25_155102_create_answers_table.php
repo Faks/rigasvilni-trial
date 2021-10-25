@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateAnswersTable extends Migration
 {
@@ -20,6 +20,7 @@ class CreateAnswersTable extends Migration
             $table->unsignedBigInteger('quiz_id')->nullable();
             $table->foreign('quiz_id')->references('id')->on('quizzes');
             $table->string('text');
+            $table->boolean('is_correct')->default(0);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

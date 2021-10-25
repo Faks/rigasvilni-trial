@@ -12,9 +12,12 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "innocenzi/laravel-vite": "^0.1.16",
-        "tightenco/ziggy": "^1.4"
+        "tightenco/ziggy": "^1.4",
+        "inertiajs/inertia-laravel": "^0.3.6"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
+        "barryvdh/laravel-ide-helper": "^2.10",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",

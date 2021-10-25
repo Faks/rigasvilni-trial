@@ -6,7 +6,30 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * App\Models\Answer
+ *
+ * @property int $id
+ * @property int|null $quiz_id
+ * @property string $text
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Database\Factories\AnswerFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|Answer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Answer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Answer query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Answer whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Answer whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Answer whereQuizId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Answer whereText($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Answer whereUpdatedAt($value)
+ * @mixin \Eloquent
+ * @property int $is_correct
+ * @property-read \App\Models\Quiz|null $quiz
+ * @method static \Illuminate\Database\Eloquent\Builder|Answer whereIsCorrect($value)
+ */
 class Answer extends Model
 {
     Use HasFactory;
@@ -18,7 +41,8 @@ class Answer extends Model
      */
     protected $fillable = [
         'quiz_id',
-        'text'
+        'text',
+        'is_correct'
     ];
 
     /**
@@ -54,7 +78,6 @@ class Answer extends Model
      */
     public function quiz(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Quiz::class);
+        return $this->belongsTo(Quiz::class);
     }
-
 }
