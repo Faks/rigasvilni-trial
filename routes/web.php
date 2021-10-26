@@ -1,6 +1,10 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+declare(strict_types=1);
+
+use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Result\ResultController;
+use App\Http\Controllers\UserAnswer\UserAnswersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +18,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, '__invoke'])
-    ->name('home');
+Route::get('/', function () {
+    return redirect()->route('home', Str::uuid());
+})
+    ->name('game.reset');
+
+Route::group([
+    'prefix' => '{gameUuid}'
+], function () {
+    Route::get('/', [HomeController::class, '__invoke'])
+        ->name('home');
+
+    Route::get('/results', [ResultController::class, '__invoke'])
+        ->name('results');
+
+    Route::resource('/user-answers', UserAnswersController::class)
+        ->only(['store']);
+});

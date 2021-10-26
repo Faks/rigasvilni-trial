@@ -9,7 +9,10 @@ import VueMeta from "vue-meta";
 import "lodash";
 import "bootstrap";
 import "bootstrap/scss/bootstrap.scss";
+// @ts-ignore
+import VueToastr from "vue-toastr";
 
+Vue.use(VueToastr)
 Vue.use(ZiggyVue, Ziggy);
 Vue.use(VueMeta);
 

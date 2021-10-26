@@ -10,6 +10,7 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.10.1",
         "@inertiajs/inertia-vue": "^0.7.2",
+        "@rollup/plugin-dynamic-import-vars": "^1.4.1",
         "@types/bootstrap": "^5.0.12",
         "@types/lodash": "^4.14.175",
         "@types/node": "^14.17.27",
@@ -41,7 +42,7 @@
         "vue-class-component": "^7.2.6",
         "vue-meta": "^2.4.0",
         "vue-property-decorator": "^9.1.2",
-        "ziggy-js": "^1.4.2",
-        "@rollup/plugin-dynamic-import-vars": "^1.4.1"
+        "vue-toastr": "^2.1.2",
+        "ziggy-js": "^1.4.2"
     }
 }

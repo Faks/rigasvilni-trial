@@ -40,7 +40,9 @@ class UserAnswers extends Model
      */
     protected $fillable = [
         'user_id',
-        'answer_id'
+        'answer_id',
+        'ip_address',
+        'game_uuid'
     ];
 
     /**

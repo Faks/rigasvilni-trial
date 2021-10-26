@@ -26,7 +26,8 @@ class UserAnswersFactory extends Factory
     {
         return [
             'user_id' => random_int(0, 9223372036854775807),
-            'answer_id' => random_int(0, 9223372036854775807)
+            'answer_id' => random_int(0, 9223372036854775807),
+            'ip_address' => $this->faker->ipv4
         ];
     }
 }

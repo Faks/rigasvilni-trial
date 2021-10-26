@@ -21,3 +21,4 @@ packages/*
 docker-compose.override.yml
 .env.backup
 package-lock.json
+resources/js/ziggy.js
